@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="midnight">
 
 <head>
     <meta charset="UTF-8">
@@ -14,10 +14,19 @@
     
     <main>
         <section class="heading">
-            <p class="brand">CASIO</p>
-            <p class="model">fx-991ES PLUS</p>
-            <p class="headingtext1">NATURAL-V.P.A.M.</p>
-            <p class="headingtext2">TWO WAY POWER</p>
+            <div class="brand-container">
+                <p class="brand">CASIO</p>
+                <p class="model">fx-991ES PLUS</p>
+            </div>
+            <div class="header-right">
+                <p class="headingtext1">NATURAL-V.P.A.M.</p>
+                <div class="header-row">
+                    <p class="headingtext2">TWO WAY POWER</p>
+                    <button id="theme-toggle" class="theme-btn" title="Change Theme">
+                        <i class="icon-settings"></i>
+                    </button>
+                </div>
+            </div>
             <div class="solar">
                 <div></div><div></div><div></div><div></div>
             </div>
@@ -246,7 +255,7 @@
                 <span class="shift-label">DRG▶</span>
                 <span class="main-label">Ans</span>
             </button>
-            <button class="btn button2" data-action="equals" style="background: linear-gradient(180deg, #48a0d0 0%, #3080b0 100%); color: white;">
+            <button class="btn button2" data-action="equals">
                 <span class="main-label">EXE</span>
             </button>
         </section>
