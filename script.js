@@ -6,6 +6,7 @@ const alphaIndicator = document.getElementById('alpha-indicator');
 const degIndicator = document.getElementById('deg-indicator');
 const radIndicator = document.getElementById('rad-indicator');
 const mIndicator = document.getElementById('m-indicator');
+const themeToggle = document.getElementById('theme-toggle');
 
 let expression = '';
 let answer = 0;
@@ -16,6 +17,26 @@ let degMode = true;
 let hypMode = false;
 let history = [];
 let historyIndex = -1;
+
+// === THEME TOGGLE LOGIC ===
+function setTheme(themeName) {
+    document.documentElement.setAttribute('data-theme', themeName);
+    localStorage.setItem('calculator-theme', themeName);
+}
+
+function initTheme() {
+    const savedTheme = localStorage.getItem('calculator-theme') || 'midnight';
+    setTheme(savedTheme);
+}
+
+themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'midnight' ? 'classic' : 'midnight';
+    setTheme(newTheme);
+});
+
+// === INITIALIZATION ===
+initTheme();
 
 // Startup animation
 setTimeout(() => {
