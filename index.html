@@ -1,267 +1,278 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="midnight">
+<html lang="en" data-theme="classic">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CASIO fx-991ES PLUS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <title>CASIO fx-991ES PLUS Natural-V.P.A.M.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Share+Tech+Mono&family=Orbitron:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="ambient"></div>
-    
-    <main>
-        <section class="heading">
-            <div class="brand-container">
-                <p class="brand">CASIO</p>
-                <p class="model">fx-991ES PLUS</p>
+    <main class="calc-chassis">
+        <!-- Brand & Solar Header -->
+        <header class="calc-header">
+            <div class="brand-section">
+                <span class="casio-logo">CASIO</span>
+                <span class="model-name">fx-991ES PLUS</span>
+                <span class="sub-edition">NATURAL-V.P.A.M.</span>
             </div>
-            <div class="header-right">
-                <p class="headingtext1">NATURAL-V.P.A.M.</p>
-                <div class="header-row">
-                    <p class="headingtext2">TWO WAY POWER</p>
-                    <button id="theme-toggle" class="theme-btn" title="Change Theme">
-                        <i class="icon-settings"></i>
-                    </button>
+
+            <div class="power-section">
+                <div class="two-way-text">TWO WAY POWER</div>
+                <div class="solar-panel" aria-label="Solar cell">
+                    <span></span><span></span><span></span><span></span>
                 </div>
             </div>
-            <div class="solar">
-                <div></div><div></div><div></div><div></div>
-            </div>
-        </section>
-        
-        <div class="displayarea">
-            <div class="display-container">
-                <div class="status-bar">
-                    <div class="status-indicators">
-                        <span class="indicator shift" id="shift-indicator">S</span>
-                        <span class="indicator alpha" id="alpha-indicator">A</span>
-                    </div>
-                    <div class="status-indicators">
-                        <span class="indicator deg active" id="deg-indicator">D</span>
-                        <span class="indicator rad" id="rad-indicator">R</span>
-                        <span class="indicator" id="m-indicator">M</span>
-                    </div>
+        </header>
+
+        <!-- LCD Screen -->
+        <section class="display-bezel">
+            <div class="lcd-screen">
+                <div class="lcd-status-row">
+                    <span class="ind" id="ind-shift">S</span>
+                    <span class="ind" id="ind-alpha">A</span>
+                    <span class="ind" id="ind-m">M</span>
+                    <span class="ind" id="ind-sto">STO</span>
+                    <span class="ind" id="ind-rcl">RCL</span>
+                    <span class="ind" id="ind-hyp">HYP</span>
+                    <span class="ind active" id="ind-deg">D</span>
+                    <span class="ind" id="ind-rad">R</span>
+                    <span class="ind" id="ind-gra">G</span>
+                    <span class="ind" id="ind-fix">FIX</span>
+                    <span class="ind" id="ind-math">Math ▲▼</span>
                 </div>
-                <p id="casiotext">CASIO</p>
-                <textarea class="display" id="display" readonly></textarea>
-            </div>
-        </div>
 
-        <section class="buttonarea1">
-            <button id="replay" class="btn">
-                <span class="main-label">REPLAY</span>
+                <!-- 2-Line Natural Display -->
+                <div class="lcd-expression-line" id="expr-line"></div>
+                <div class="lcd-result-line" id="res-line">0</div>
+            </div>
+        </section>
+
+        <!-- Function & Replay Pad Cluster -->
+        <section class="top-control-cluster">
+            <div class="top-function-btns">
+                <button class="btn btn-pill" data-action="shift">
+                    <span class="main-txt font-yellow">SHIFT</span>
+                </button>
+                <button class="btn btn-pill" data-action="alpha">
+                    <span class="main-txt font-magenta">ALPHA</span>
+                </button>
+            </div>
+
+            <!-- Authentic Oval REPLAY Joypad -->
+            <div class="replay-pad">
+                <button class="dpad-btn up" data-nav="up" title="Previous History">▲</button>
+                <button class="dpad-btn left" data-nav="left" title="Move Cursor Left">◀</button>
+                <span class="replay-title">REPLAY</span>
+                <button class="dpad-btn right" data-nav="right" title="Move Cursor Right">▶</button>
+                <button class="dpad-btn down" data-nav="down" title="Next History">▼</button>
+            </div>
+
+            <div class="top-function-btns">
+                <button class="btn btn-pill" data-action="mode">
+                    <span class="shift-hint">SETUP</span>
+                    <span class="main-txt">MODE</span>
+                </button>
+                <button class="btn btn-pill" data-action="on">
+                    <span class="main-txt">ON</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Scientific Function Matrix (Black trapezoid keys) -->
+        <section class="scientific-keypad">
+            <!-- Row 1 -->
+            <button class="btn btn-fn" data-action="calc">
+                <span class="shift-hint">SOLVE</span>
+                <span class="alpha-hint">=</span>
+                <span class="main-txt">CALC</span>
             </button>
-            <button class="btn button3" data-action="shift">
-                <span class="main-label">SHIFT</span>
+            <button class="btn btn-fn" data-action="d_dx">
+                <span class="shift-hint">d/dx</span>
+                <span class="alpha-hint">:</span>
+                <span class="main-txt">∫dx</span>
             </button>
-            <button class="btn button3" data-action="alpha">
-                <span class="main-label">ALPHA</span>
+            <button class="btn btn-fn" data-action="inv">
+                <span class="shift-hint">x!</span>
+                <span class="alpha-hint">A</span>
+                <span class="main-txt">x⁻¹</span>
             </button>
-            <button class="btn button3" data-action="mode">
-                <span class="main-label">MODE</span>
+            <button class="btn btn-fn" data-action="logbase">
+                <span class="shift-hint">Σ</span>
+                <span class="alpha-hint">B</span>
+                <span class="main-txt">log<sub>■</sub>■</span>
             </button>
-            <button class="btn button3" data-action="on">
-                <span class="main-label">ON</span>
+
+            <!-- Row 2 -->
+            <button class="btn btn-fn" data-action="frac">
+                <span class="shift-hint">■ <sup>■</sup>/<sub>■</sub></span>
+                <span class="main-txt"><sup>■</sup>/<sub>■</sub></span>
             </button>
-            
-            <button class="btn button1" data-action="calc">
-                <span class="shift-label">SOLVE</span>
-                <span class="main-label">CALC</span>
+            <button class="btn btn-fn" data-action="sqrt">
+                <span class="shift-hint"><sup>3</sup>√■</span>
+                <span class="alpha-hint">C</span>
+                <span class="main-txt">√■</span>
             </button>
-            <button class="btn button1" data-action="integral">
-                <span class="shift-label">d/dx</span>
-                <span class="main-label">∫dx</span>
+            <button class="btn btn-fn" data-action="square">
+                <span class="shift-hint">x³</span>
+                <span class="alpha-hint">D</span>
+                <span class="main-txt">x²</span>
             </button>
-            <button class="btn button1" data-action="x-1">
-                <span class="shift-label">x!</span>
-                <span class="alpha-label">A</span>
-                <span class="main-label">x⁻¹</span>
+            <button class="btn btn-fn" data-action="power">
+                <span class="shift-hint"><sup>x</sup>√■</span>
+                <span class="alpha-hint">E</span>
+                <span class="main-txt">x<sup>■</sup></span>
             </button>
-            <button class="btn button1" data-action="logbase">
-                <span class="shift-label">√</span>
-                <span class="alpha-label">B</span>
-                <span class="main-label">logₐb</span>
+            <button class="btn btn-fn" data-action="log">
+                <span class="shift-hint">10<sup>■</sup></span>
+                <span class="alpha-hint">F</span>
+                <span class="main-txt">log</span>
             </button>
-            <button class="btn button1" data-action="sqrt">
-                <span class="shift-label">∛</span>
-                <span class="alpha-label">C</span>
-                <span class="main-label">√</span>
+            <button class="btn btn-fn" data-action="ln">
+                <span class="shift-hint">e<sup>■</sup></span>
+                <span class="main-txt">ln</span>
             </button>
-            
-            <button class="btn button1" data-action="square">
-                <span class="shift-label">x³</span>
-                <span class="alpha-label">D</span>
-                <span class="main-label">x²</span>
+
+            <!-- Row 3 -->
+            <button class="btn btn-fn" data-action="negate">
+                <span class="main-txt">(−)</span>
             </button>
-            <button class="btn button1" data-action="power">
-                <span class="shift-label">x⁻¹</span>
-                <span class="alpha-label">E</span>
-                <span class="main-label">xʸ</span>
+            <button class="btn btn-fn" data-action="dms">
+                <span class="shift-hint">←</span>
+                <span class="main-txt">° ’ ”</span>
             </button>
-            <button class="btn button1" data-action="log">
-                <span class="shift-label">10ˣ</span>
-                <span class="alpha-label">F</span>
-                <span class="main-label">log</span>
+            <button class="btn btn-fn" data-action="hyp">
+                <span class="main-txt">hyp</span>
             </button>
-            <button class="btn button1" data-action="ln">
-                <span class="shift-label">eˣ</span>
-                <span class="alpha-label">G</span>
-                <span class="main-label">ln</span>
+            <button class="btn btn-fn" data-action="sin">
+                <span class="shift-hint">sin⁻¹</span>
+                <span class="main-txt">sin</span>
             </button>
-            <button class="btn button1" data-action="negate">
-                <span class="shift-label">(-)</span>
-                <span class="alpha-label">H</span>
-                <span class="main-label">(−)</span>
+            <button class="btn btn-fn" data-action="cos">
+                <span class="shift-hint">cos⁻¹</span>
+                <span class="main-txt">cos</span>
             </button>
-            
-            <button class="btn button1" data-action="dms">
-                <span class="shift-label">□°□'□"</span>
-                <span class="alpha-label">I</span>
-                <span class="main-label">°,'"</span>
+            <button class="btn btn-fn" data-action="tan">
+                <span class="shift-hint">tan⁻¹</span>
+                <span class="main-txt">tan</span>
             </button>
-            <button class="btn button1" data-action="hyp">
-                <span class="shift-label">□⁻¹</span>
-                <span class="alpha-label">J</span>
-                <span class="main-label">hyp</span>
+
+            <!-- Row 4 -->
+            <button class="btn btn-fn" data-action="rcl">
+                <span class="shift-hint">STO</span>
+                <span class="main-txt">RCL</span>
             </button>
-            <button class="btn button1" data-action="sin">
-                <span class="shift-label">sin⁻¹</span>
-                <span class="alpha-label">K</span>
-                <span class="main-label">sin</span>
+            <button class="btn btn-fn" data-action="eng">
+                <span class="shift-hint">←</span>
+                <span class="main-txt">ENG</span>
             </button>
-            <button class="btn button1" data-action="cos">
-                <span class="shift-label">cos⁻¹</span>
-                <span class="alpha-label">L</span>
-                <span class="main-label">cos</span>
+            <button class="btn btn-fn" data-action="lparen">
+                <span class="alpha-hint">(</span>
+                <span class="main-txt">(</span>
             </button>
-            <button class="btn button1" data-action="tan">
-                <span class="shift-label">tan⁻¹</span>
-                <span class="alpha-label">M</span>
-                <span class="main-label">tan</span>
+            <button class="btn btn-fn" data-action="rparen">
+                <span class="alpha-hint">X</span>
+                <span class="main-txt">)</span>
             </button>
-            
-            <button class="btn button1" data-action="rcl">
-                <span class="shift-label">STO</span>
-                <span class="main-label">RCL</span>
+            <button class="btn btn-fn" data-action="sd">
+                <span class="shift-hint">a b/c⇔d/c</span>
+                <span class="main-txt">S⇔D</span>
             </button>
-            <button class="btn button1" data-action="eng">
-                <span class="shift-label">Rnd</span>
-                <span class="main-label">ENG</span>
-            </button>
-            <button class="btn button1" data-action="lparen">
-                <span class="alpha-label">X</span>
-                <span class="main-label">(</span>
-            </button>
-            <button class="btn button1" data-action="rparen">
-                <span class="alpha-label">Y</span>
-                <span class="main-label">)</span>
-            </button>
-            <button class="btn button1" data-action="sd">
-                <span class="shift-label">▶DEC</span>
-                <span class="main-label">S⇔D</span>
-            </button>
-            <button class="btn button1" data-action="mplus">
-                <span class="shift-label">M−</span>
-                <span class="main-label">M+</span>
+            <button class="btn btn-fn" data-action="mplus">
+                <span class="shift-hint">M−</span>
+                <span class="alpha-hint">M</span>
+                <span class="main-txt">M+</span>
             </button>
         </section>
 
-        <section class="buttonarea2">
-            <button class="btn button2" data-value="7">
-                <span class="shift-label">OCT</span>
-                <span class="alpha-label">N</span>
-                <span class="main-label">7</span>
+        <!-- Main Numeric Keypad (White & Orange keys) -->
+        <section class="numeric-keypad">
+            <!-- Row 1 -->
+            <button class="btn btn-num" data-val="7">
+                <span class="shift-hint">CONST</span>
+                <span class="main-txt">7</span>
             </button>
-            <button class="btn button2" data-value="8">
-                <span class="shift-label">BIN</span>
-                <span class="alpha-label">O</span>
-                <span class="main-label">8</span>
+            <button class="btn btn-num" data-val="8">
+                <span class="shift-hint">CONV</span>
+                <span class="main-txt">8</span>
             </button>
-            <button class="btn button2" data-value="9">
-                <span class="shift-label">HEX</span>
-                <span class="alpha-label">P</span>
-                <span class="main-label">9</span>
+            <button class="btn btn-num" data-val="9">
+                <span class="shift-hint">CLR</span>
+                <span class="main-txt">9</span>
             </button>
-            <button class="btn button2" id="del" data-action="del">
-                <span class="main-label">DEL</span>
+            <button class="btn btn-action-del" data-action="del">
+                <span class="shift-hint">INS</span>
+                <span class="main-txt">DEL</span>
             </button>
-            <button class="btn button2" id="ac" data-action="ac">
-                <span class="main-label">AC</span>
+            <button class="btn btn-action-ac" data-action="ac">
+                <span class="shift-hint">OFF</span>
+                <span class="main-txt">AC</span>
             </button>
-            
-            <button class="btn button2" data-value="4">
-                <span class="alpha-label">Q</span>
-                <span class="main-label">4</span>
+
+            <!-- Row 2 -->
+            <button class="btn btn-num" data-val="4"><span class="main-txt">4</span></button>
+            <button class="btn btn-num" data-val="5"><span class="main-txt">5</span></button>
+            <button class="btn btn-num" data-val="6"><span class="main-txt">6</span></button>
+            <button class="btn btn-num" data-action="mul">
+                <span class="shift-hint">nPr</span>
+                <span class="main-txt">×</span>
             </button>
-            <button class="btn button2" data-value="5">
-                <span class="alpha-label">R</span>
-                <span class="main-label">5</span>
+            <button class="btn btn-num" data-action="div">
+                <span class="shift-hint">nCr</span>
+                <span class="main-txt">÷</span>
             </button>
-            <button class="btn button2" data-value="6">
-                <span class="alpha-label">S</span>
-                <span class="main-label">6</span>
+
+            <!-- Row 3 -->
+            <button class="btn btn-num" data-val="1">
+                <span class="shift-hint">STAT</span>
+                <span class="main-txt">1</span>
             </button>
-            <button class="btn button2" data-action="mul">
-                <span class="shift-label">nPr</span>
-                <span class="alpha-label">T</span>
-                <span class="main-label">×</span>
+            <button class="btn btn-num" data-val="2">
+                <span class="shift-hint">CMPLX</span>
+                <span class="main-txt">2</span>
             </button>
-            <button class="btn button2" data-action="div">
-                <span class="shift-label">nCr</span>
-                <span class="alpha-label">U</span>
-                <span class="main-label">÷</span>
+            <button class="btn btn-num" data-val="3">
+                <span class="shift-hint">BASE</span>
+                <span class="main-txt">3</span>
             </button>
-            
-            <button class="btn button2" data-value="1">
-                <span class="alpha-label">V</span>
-                <span class="main-label">1</span>
+            <button class="btn btn-num" data-action="add">
+                <span class="shift-hint">Pol</span>
+                <span class="main-txt">+</span>
             </button>
-            <button class="btn button2" data-value="2">
-                <span class="alpha-label">W</span>
-                <span class="main-label">2</span>
+            <button class="btn btn-num" data-action="sub">
+                <span class="shift-hint">Rec</span>
+                <span class="main-txt">−</span>
             </button>
-            <button class="btn button2" data-value="3">
-                <span class="alpha-label">X</span>
-                <span class="main-label">3</span>
+
+            <!-- Row 4 -->
+            <button class="btn btn-num" data-val="0">
+                <span class="shift-hint">Rnd</span>
+                <span class="main-txt">0</span>
             </button>
-            <button class="btn button2" data-action="add">
-                <span class="alpha-label">Y</span>
-                <span class="main-label">+</span>
+            <button class="btn btn-num" data-val=".">
+                <span class="shift-hint">Ran#</span>
+                <span class="alpha-hint">RanInt</span>
+                <span class="main-txt">•</span>
             </button>
-            <button class="btn button2" data-action="sub">
-                <span class="alpha-label">Z</span>
-                <span class="main-label">−</span>
+            <button class="btn btn-num" data-action="exp">
+                <span class="shift-hint">π</span>
+                <span class="alpha-hint">e</span>
+                <span class="main-txt">×10<sup>x</sup></span>
             </button>
-            
-            <button class="btn button2" data-value="0">
-                <span class="shift-label"> Ran#</span>
-                <span class="alpha-label">θ</span>
-                <span class="main-label">0</span>
+            <button class="btn btn-num" data-action="ans">
+                <span class="shift-hint">%</span>
+                <span class="main-txt">Ans</span>
             </button>
-            <button class="btn button2" data-value=".">
-                <span class="shift-label">π</span>
-                <span class="alpha-label">r</span>
-                <span class="main-label">.</span>
-            </button>
-            <button class="btn button2" data-action="exp">
-                <span class="shift-label">e</span>
-                <span class="alpha-label">i</span>
-                <span class="main-label">×10ˣ</span>
-            </button>
-            <button class="btn button2" data-action="ans">
-                <span class="shift-label">DRG▶</span>
-                <span class="main-label">Ans</span>
-            </button>
-            <button class="btn button2" data-action="equals">
-                <span class="main-label">EXE</span>
+            <button class="btn btn-num" data-action="equals">
+                <span class="main-txt">=</span>
             </button>
         </section>
     </main>
 
     <script src="script.js"></script>
 </body>
-
 </html>

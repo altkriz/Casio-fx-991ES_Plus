@@ -1,547 +1,367 @@
-/* === THEME VARIABLES === */
+/* =======================================================
+   CASIO fx-991ES PLUS ULTRA-ACCURATE STYLESHEET
+   ======================================================= */
 :root {
-    /* Theme: Midnight (Default) */
-    --bg-body: #0a0b0d;
-    --bg-body-glow-1: rgba(40, 60, 80, 0.15);
-    --bg-body-glow-2: rgba(30, 40, 60, 0.1);
+    --case-silver-top: #cfd4d8;
+    --case-silver-mid: #b8bdc2;
+    --case-silver-bottom: #9ca2a8;
+    --bezel-dark: #22252a;
     
-    --calc-body-bg: linear-gradient(145deg, #2a2e35 0%, #1a1d22 50%, #12141a 100%);
-    --calc-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
-    --calc-highlight: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 50%);
+    /* Casio LCD Colors */
+    --lcd-bg: #9cb199;
+    --lcd-pixel: #18241b;
+    --lcd-shadow: rgba(0, 20, 5, 0.45);
     
-    --display-bg: linear-gradient(180deg, #9ab8a2 0%, #b8d4c0 50%, #a0b8a8 100%);
-    --display-text: #1a2a1f;
-    
-    --btn-top-bg: linear-gradient(180deg, #a8b8c8 0%, #7888a0 100%);
-    --btn-top-text: #ffffff;
-    
-    --btn-func-bg: linear-gradient(180deg, #4a4e55 0%, #2a2e35 100%);
-    --btn-func-text: #e8e8e8;
-    
-    --btn-num-bg: linear-gradient(180deg, #f8f8f8 0%, #d8d8d8 100%);
-    --btn-num-text: #1a1a1a;
-    
-    --btn-accent-bg: linear-gradient(180deg, #f87038 0%, #d04810 100%);
-    --btn-exe-bg: linear-gradient(180deg, #48a0d0 0%, #3080b0 100%);
-    
-    --brand-color: #d0d4d8;
-    --subtext-color: #8a8e92;
-    --accent-text: #40b0a0;
+    /* Authentic Key Colors */
+    --btn-fn-dark: #373b40;
+    --btn-fn-top: #4a4e54;
+    --btn-num-light: #eceef0;
+    --btn-num-bottom: #c8cbd0;
+    --btn-pill-top: #a1a6ac;
+    --btn-pill-bot: #7d8288;
+    --btn-del-ac: #df5435;
+    --btn-del-ac-dark: #af361c;
+
+    /* Label Colors */
+    --c-yellow: #e6a100;
+    --c-magenta: #e93d82;
+    --c-cyan: #00b4d8;
+    --c-text-white: #ffffff;
 }
 
-[data-theme="classic"] {
-    /* Theme: Classic (Standard Casio Look) */
-    --bg-body: #536878; /* Slate background */
-    --bg-body-glow-1: transparent;
-    --bg-body-glow-2: transparent;
-    
-    --calc-body-bg: linear-gradient(180deg, #3b4854 0%, #2a343d 100%);
-    --calc-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    --calc-highlight: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 50%);
-    
-    --display-bg: linear-gradient(180deg, #c8d8c0 0%, #a0b898 100%);
-    --display-text: #1a2a1f;
-    
-    --btn-top-bg: linear-gradient(180deg, #4a5a6a 0%, #3a4a5a 100%);
-    --btn-top-text: #ffffff;
-    
-    --btn-func-bg: linear-gradient(180deg, #3a3a3a 0%, #222222 100%);
-    --btn-func-text: #e8e8e8;
-    
-    --btn-num-bg: linear-gradient(180deg, #f0f0f0 0%, #d0d0d0 100%);
-    --btn-num-text: #1a1a1a;
-    
-    --btn-accent-bg: linear-gradient(180deg, #f08040 0%, #d06020 100%);
-    --btn-exe-bg: linear-gradient(180deg, #3070a0 0%, #205080 100%);
-    
-    --brand-color: #f0f0f0;
-    --subtext-color: #b0b8bc;
-    --accent-text: #00a090;
-}
-
-/* === BASE STYLES === */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: radial-gradient(circle at center, #2e3440 0%, #1a1c23 100%);
     min-height: 100vh;
-    background: var(--bg-body);
-    background-image: 
-        radial-gradient(ellipse at 30% 20%, var(--bg-body-glow-1) 0%, transparent 50%),
-        radial-gradient(ellipse at 70% 80%, var(--bg-body-glow-2) 0%, transparent 50%);
-    font-family: 'Segoe UI', system-ui, sans-serif;
-    overflow: hidden;
-    transition: background 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Chakra Petch', sans-serif;
+    padding: 20px;
 }
 
-.ambient {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-    opacity: 0.5;
-    transition: opacity 0.5s ease;
+/* Outer Casio Body (Tapered Plastic Shell) */
+.calc-chassis {
+    width: 330px;
+    background: linear-gradient(180deg, var(--case-silver-top) 0%, var(--case-silver-mid) 40%, var(--case-silver-bottom) 100%);
+    border-radius: 16px 16px 36px 36px;
+    padding: 18px 14px 24px;
+    box-shadow: 
+        0 20px 45px rgba(0, 0, 0, 0.7),
+        inset 0 2px 3px rgba(255, 255, 255, 0.8),
+        inset 0 -4px 6px rgba(0, 0, 0, 0.4);
+    position: relative;
+    border: 1px solid #787d84;
 }
 
-[data-theme="classic"] .ambient {
-    opacity: 0;
+/* Header Area */
+.calc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    padding: 0 4px;
 }
 
-.ambient::before {
-    content: '';
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(240, 160, 48, 0.05) 0%, transparent 70%);
-    top: 10%;
-    left: 10%;
-    animation: float 20s ease-in-out infinite;
-}
-
-.ambient::after {
-    content: '';
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(64, 160, 224, 0.04) 0%, transparent 70%);
-    bottom: 10%;
-    right: 10%;
-    animation: float 25s ease-in-out infinite reverse;
-}
-
-@keyframes float {
-    0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(30px, -30px); }
-}
-
-main {
+.brand-section {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background: var(--calc-body-bg);
-    box-shadow: var(--calc-shadow),
-                inset 0 2px 4px rgba(255, 255, 255, 0.05),
-                inset 0 -4px 8px rgba(0, 0, 0, 0.3);
-    border-radius: 12px 12px 24px 24px;
-    width: 320px;
-    padding: 16px 12px 20px;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: background 0.5s ease, box-shadow 0.5s ease;
 }
 
-main::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: var(--calc-highlight);
-    pointer-events: none;
-}
-
-/* Header Section */
-.heading {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 2px 12px;
-    width: 100%;
-    padding: 0 8px;
-    margin-bottom: 12px;
-    align-items: end;
-}
-
-.brand-container {
-    grid-column: 1;
-    grid-row: 1 / 3;
-}
-
-.brand {
+.casio-logo {
     font-family: 'Orbitron', sans-serif;
+    font-size: 1.15rem;
     font-weight: 700;
-    font-size: 1.1rem;
-    color: var(--brand-color);
-    letter-spacing: 3px;
-    text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+    letter-spacing: 2px;
+    color: #1a1e24;
 }
 
-.model {
-    font-size: 0.55rem;
-    font-style: italic;
-    color: var(--subtext-color);
+.model-name {
+    font-size: 0.72rem;
+    font-weight: 700;
     letter-spacing: 0.5px;
-    margin-top: 2px;
+    color: #2b3038;
 }
 
-.header-right {
-    grid-column: 2;
-    grid-row: 1 / 3;
+.sub-edition {
+    font-size: 0.48rem;
+    font-weight: 700;
+    color: #0b4f8a;
+    letter-spacing: 0.5px;
+}
+
+.power-section {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
 
-.header-row {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 100%;
-    margin-top: 4px;
-}
-
-.headingtext1 {
-    font-size: 0.5rem;
-    color: var(--accent-text);
+.two-way-text {
+    font-size: 0.42rem;
     font-weight: 700;
-    font-style: italic;
-    letter-spacing: 1px;
-    text-shadow: 0 0 8px rgba(64, 176, 160, 0.3);
-    margin-bottom: 2px;
+    color: #4b515a;
+    margin-bottom: 3px;
 }
 
-.headingtext2 {
-    font-size: 0.4rem;
-    color: var(--subtext-color);
-    text-align: right;
-    margin-right: 8px;
-}
-
-/* Theme Toggle Button */
-.theme-btn {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 4px;
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
-    color: var(--subtext-color);
-}
-
-.theme-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-    color: var(--brand-color);
-}
-
-.icon-settings::before {
-    content: "⚙️";
-    font-size: 12px;
-}
-
-.solar {
-    grid-column: 1 / 3;
-    grid-row: 3;
+.solar-panel {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2px;
-    border: 2px solid #0a0c0e;
-    border-radius: 6px;
-    padding: 3px;
-    background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+    background: #111;
+    padding: 2px 3px;
+    border-radius: 3px;
+    border: 1px solid #555;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.8);
+}
+
+.solar-panel span {
+    width: 10px;
+    height: 18px;
+    background: linear-gradient(180deg, #3d241d 0%, #1f110c 100%);
+    border-radius: 1px;
+}
+
+/* Display Bezel & LCD */
+.display-bezel {
+    background: var(--bezel-dark);
+    padding: 10px 10px 8px;
+    border-radius: 8px 8px 12px 12px;
     box-shadow: 
-        inset 0 2px 4px rgba(0,0,0,0.5),
-        0 1px 0 rgba(255,255,255,0.05);
-    width: 100%;
-    margin-top: 8px;
-}
-
-.solar div {
-    background: linear-gradient(180deg, #3a3a3a 0%, #252525 50%, #3a3a3a 100%);
-    border-radius: 2px;
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.5);
-    height: 14px;
-}
-
-/* Display Section */
-.displayarea {
-    width: 100%;
-    padding: 0 8px;
-    position: relative;
+        inset 0 2px 5px rgba(0,0,0,0.8),
+        0 2px 3px rgba(255,255,255,0.4);
     margin-bottom: 12px;
 }
 
-.display-container {
-    background: var(--display-bg);
+.lcd-screen {
+    background: var(--lcd-bg);
     border-radius: 4px;
-    padding: 12px 10px;
-    box-shadow: 
-        inset 0 2px 8px rgba(0, 40, 20, 0.3),
-        inset 0 -2px 4px rgba(255, 255, 255, 0.1),
-        0 2px 0 rgba(0,0,0,0.3);
+    padding: 4px 6px 4px;
+    box-shadow: inset 0 2px 6px var(--lcd-shadow);
+    color: var(--lcd-pixel);
+    font-family: 'Share Tech Mono', monospace;
     position: relative;
-    min-height: 90px;
-    transition: background 0.3s ease;
+    border: 1px solid #758673;
 }
 
-.status-bar {
+.lcd-status-row {
+    display: flex;
+    gap: 4px;
+    font-size: 0.55rem;
+    font-weight: 700;
+    height: 12px;
+    align-items: center;
+    border-bottom: 1px dotted rgba(24, 36, 27, 0.25);
+}
+
+.lcd-status-row .ind {
+    opacity: 0.15;
+    transition: opacity 0.1s;
+}
+
+.lcd-status-row .ind.active {
+    opacity: 1;
+}
+
+.lcd-expression-line {
+    min-height: 24px;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    display: flex;
+    align-items: center;
+}
+
+.lcd-result-line {
+    min-height: 28px;
+    font-size: 1.45rem;
+    text-align: right;
+    font-weight: 700;
+    overflow-x: auto;
+    white-space: nowrap;
+    line-height: 1.1;
+}
+
+/* Top Control Cluster (SHIFT, ALPHA, REPLAY, MODE, ON) */
+.top-control-cluster {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 6px;
-    padding: 0 2px;
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 0.6rem;
-    color: #5a7a62;
-}
-
-.status-indicators {
-    display: flex;
-    gap: 8px;
-}
-
-.indicator {
-    opacity: 0.3;
-    transition: opacity 0.2s, text-shadow 0.2s;
-}
-
-.indicator.active {
-    opacity: 1;
-    text-shadow: 0 0 4px currentColor;
-}
-
-.indicator.shift { color: #f0a030; }
-.indicator.alpha { color: #40a0e0; }
-.indicator.deg { color: #4a8a5a; }
-.indicator.rad { color: #4a8a5a; }
-
-.display {
-    background: transparent;
-    border: none;
-    width: 100%;
-    min-height: 50px;
-    resize: none;
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 1.2rem;
-    color: var(--display-text);
-    line-height: 1.4;
-    cursor: default;
-    text-shadow: 0 0 1px rgba(0, 40, 20, 0.3);
-}
-
-.display:focus {
-    outline: none;
-}
-
-.display::selection {
-    background: rgba(0, 40, 20, 0.2);
-}
-
-#casiotext {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: #7a9a82;
-    opacity: 1;
-    animation: startupFade 3s forwards;
-    pointer-events: none;
-}
-
-@keyframes startupFade {
-    0%, 60% { opacity: 1; }
-    100% { opacity: 0; }
-}
-
-/* Replay Button */
-#replay {
-    grid-column: 3 / 5;
-    grid-row: 1 / 3;
-    background: linear-gradient(180deg, #b8c8d8 0%, #8898a8 100%);
-    box-shadow: 
-        inset 0 1px 0 rgba(255,255,255,0.3),
-        0 2px 4px rgba(0,0,0,0.3);
-    border: none;
-    border-radius: 50%;
-    width: 100%;
-    height: 90%;
-    cursor: pointer;
-    font-size: 0.55rem;
-    font-weight: 700;
-    color: #4a5a6a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.15s;
-    position: relative;
-}
-
-#replay:hover {
-    background: linear-gradient(180deg, #c8d8e8 0%, #98a8b8 100%);
-}
-
-#replay:active {
-    transform: scale(0.95);
-    box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
-}
-
-/* Button Areas */
-.buttonarea1, .buttonarea2 {
-    display: grid;
-    width: 100%;
+    margin-bottom: 8px;
     padding: 0 4px;
+}
+
+.top-function-btns {
+    display: flex;
     gap: 6px;
 }
 
-.buttonarea1 {
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    margin-bottom: 8px;
+.replay-pad {
+    width: 82px;
+    height: 64px;
+    background: linear-gradient(180deg, #c2c7cd 0%, #8c9299 100%);
+    border-radius: 40px;
+    box-shadow: 
+        0 3px 6px rgba(0,0,0,0.4),
+        inset 0 1px 2px rgba(255,255,255,0.7);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    position: relative;
 }
 
-.buttonarea2 {
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+.replay-title {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 0.42rem;
+    font-weight: 700;
+    color: #3b4046;
 }
 
-/* Button Styles */
+.dpad-btn {
+    background: transparent;
+    border: none;
+    color: #2b3038;
+    font-size: 0.65rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 2px;
+}
+
+.dpad-btn:active {
+    color: #000;
+    transform: scale(0.85);
+}
+
+.dpad-btn.up { grid-column: 2; grid-row: 1; }
+.dpad-btn.down { grid-column: 2; grid-row: 3; }
+.dpad-btn.left { grid-column: 1; grid-row: 2; }
+.dpad-btn.right { grid-column: 3; grid-row: 2; }
+
+/* Buttons & Labels Base */
 .btn {
     position: relative;
     border: none;
     cursor: pointer;
-    font-family: 'Segoe UI', sans-serif;
-    font-weight: 600;
-    transition: all 0.1s ease;
+    outline: none;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    line-height: 1.1;
-    border-radius: 4px 4px 40% 40%;
     box-shadow: 
-        0 3px 0 rgba(0,0,0,0.3),
-        0 4px 6px rgba(0,0,0,0.2),
-        inset 0 1px 0 rgba(255,255,255,0.15);
-}
-
-.btn:hover {
-    filter: brightness(1.1);
+        0 3px 2px rgba(0,0,0,0.35),
+        inset 0 1px 1px rgba(255,255,255,0.4);
+    border-radius: 4px 4px 6px 6px;
+    transition: transform 0.05s, box-shadow 0.05s, filter 0.05s;
 }
 
 .btn:active {
     transform: translateY(2px);
-    box-shadow: 
-        0 1px 0 rgba(0,0,0,0.3),
-        0 2px 4px rgba(0,0,0,0.2),
-        inset 0 1px 2px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.4);
+    filter: brightness(0.92);
 }
 
-.btn .main-label {
-    font-size: 0.7rem;
-    z-index: 1;
-}
-
-.btn .shift-label {
+.shift-hint {
     position: absolute;
-    top: 2px;
-    left: 4px;
-    font-size: 0.45rem;
-    color: #f0a030;
+    top: -9px;
+    left: 1px;
+    font-size: 0.44rem;
     font-weight: 700;
+    color: var(--c-yellow);
+    pointer-events: none;
 }
 
-.btn .alpha-label {
+.alpha-hint {
     position: absolute;
-    top: 2px;
-    right: 4px;
-    font-size: 0.45rem;
-    color: #40a0e0;
+    top: -9px;
+    right: 1px;
+    font-size: 0.44rem;
+    font-weight: 700;
+    color: var(--c-magenta);
+    pointer-events: none;
+}
+
+.font-yellow { color: var(--c-yellow) !important; }
+.font-magenta { color: var(--c-magenta) !important; }
+
+/* Pill Shaped Top Buttons */
+.btn-pill {
+    width: 32px;
+    height: 20px;
+    background: linear-gradient(180deg, var(--btn-pill-top) 0%, var(--btn-pill-bot) 100%);
+    border-radius: 10px;
+}
+.btn-pill .main-txt {
+    font-size: 0.48rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Scientific Keys Grid */
+.scientific-keypad {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px 6px;
+    margin-bottom: 12px;
+    padding-top: 6px;
+}
+
+.btn-fn {
+    height: 25px;
+    background: linear-gradient(180deg, var(--btn-fn-top) 0%, var(--btn-fn-dark) 100%);
+    color: #fff;
+    border-radius: 3px 3px 5px 5px;
+}
+
+.btn-fn .main-txt {
+    font-size: 0.65rem;
+    font-weight: 600;
+}
+
+/* Numeric & Lower Keypad Grid */
+.numeric-keypad {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px 6px;
+}
+
+.btn-num {
+    height: 33px;
+    background: linear-gradient(180deg, var(--btn-num-light) 0%, var(--btn-num-bottom) 100%);
+    color: #121416;
+    border-radius: 4px;
+}
+
+.btn-num .main-txt {
+    font-size: 0.92rem;
     font-weight: 700;
 }
 
-/* Button Types */
-.button1 {
-    background: var(--btn-func-bg);
-    color: var(--btn-func-text);
-    height: 32px;
-    min-height: 32px;
+.btn-action-del, .btn-action-ac {
+    height: 33px;
+    background: linear-gradient(180deg, var(--btn-del-ac) 0%, var(--btn-del-ac-dark) 100%);
+    color: #ffffff;
 }
 
-.button2 {
-    background: var(--btn-num-bg);
-    color: var(--btn-num-text);
-    height: 38px;
-    min-height: 38px;
-}
-
-.button2 .main-label {
-    font-size: 1rem;
+.btn-action-del .main-txt, .btn-action-ac .main-txt {
+    font-size: 0.76rem;
     font-weight: 700;
 }
 
-.button3 {
-    background: var(--btn-top-bg);
-    color: var(--btn-top-text);
-    height: 32px;
-    min-height: 32px;
-    text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+/* Active modifier button highlight */
+.btn.active-mod {
+    box-shadow: 0 0 6px 2px var(--c-yellow);
 }
-
-.button3.active-shift {
-    background: linear-gradient(180deg, #f0a030 0%, #d08020 100%) !important;
-    box-shadow: 
-        0 3px 0 rgba(0,0,0,0.3),
-        0 4px 6px rgba(0,0,0,0.2),
-        inset 0 1px 0 rgba(255,255,255,0.3),
-        0 0 12px rgba(240, 160, 48, 0.4);
-}
-
-.button3.active-alpha {
-    background: linear-gradient(180deg, #40a0e0 0%, #2080c0 100%) !important;
-    box-shadow: 
-        0 3px 0 rgba(0,0,0,0.3),
-        0 4px 6px rgba(0,0,0,0.2),
-        inset 0 1px 0 rgba(255,255,255,0.3),
-        0 0 12px rgba(64, 160, 224, 0.4);
-}
-
-#del, #ac {
-    background: var(--btn-accent-bg);
-    color: white;
-}
-
-#del .main-label, #ac .main-label {
-    font-size: 0.75rem;
-}
-
-[data-action="equals"] {
-    background: var(--btn-exe-bg);
-    color: white;
-}
-
-/* Responsive */
-@media (max-width: 360px) {
-    main {
-        width: 290px;
-        padding: 12px 8px 16px;
-    }
-    .button1, .button3 { height: 28px; min-height: 28px; }
-    .button2 { height: 34px; min-height: 34px; }
-    .btn .main-label { font-size: 0.6rem; }
-    .button2 .main-label { font-size: 0.9rem; }
-}
-
-@media (min-width: 500px) {
-    main {
-        width: 340px;
-    }
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-    }
+.btn.active-alpha-mod {
+    box-shadow: 0 0 6px 2px var(--c-magenta);
 }
