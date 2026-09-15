@@ -1,367 +1,397 @@
-/* =======================================================
-   CASIO fx-991ES PLUS ULTRA-ACCURATE STYLESHEET
-   ======================================================= */
-:root {
-    --case-silver-top: #cfd4d8;
-    --case-silver-mid: #b8bdc2;
-    --case-silver-bottom: #9ca2a8;
-    --bezel-dark: #22252a;
-    
-    /* Casio LCD Colors */
-    --lcd-bg: #9cb199;
-    --lcd-pixel: #18241b;
-    --lcd-shadow: rgba(0, 20, 5, 0.45);
-    
-    /* Authentic Key Colors */
-    --btn-fn-dark: #373b40;
-    --btn-fn-top: #4a4e54;
-    --btn-num-light: #eceef0;
-    --btn-num-bottom: #c8cbd0;
-    --btn-pill-top: #a1a6ac;
-    --btn-pill-bot: #7d8288;
-    --btn-del-ac: #df5435;
-    --btn-del-ac-dark: #af361c;
+    /* ========================================================
+           AUTHENTIC CASIO fx-991ES PLUS DESIGN SYSTEM
+           ======================================================== */
+        :root {
+            --body-silver-1: #d2d7dc;
+            --body-silver-2: #b4bac0;
+            --body-silver-3: #9299a0;
+            --bezel-dark: #1b1e22;
+            
+            /* Casio Natural V.P.A.M. LCD Matrix Palette */
+            --lcd-bg: #9eb59b;
+            --lcd-ink: #162217;
+            --lcd-dim: rgba(22, 34, 23, 0.15);
+            --lcd-shadow: rgba(0, 20, 5, 0.35);
+            
+            /* Casio Label Colors */
+            --c-shift: #df9800;    /* Amber Gold */
+            --c-alpha: #d62258;    /* Ruby Magenta */
+            --c-mode: #0087a5;     /* Cyan Blue */
+            --c-del-ac: #de4a2c;   /* Brick Red/Orange */
+            --c-del-dark: #9a2b13;
 
-    /* Label Colors */
-    --c-yellow: #e6a100;
-    --c-magenta: #e93d82;
-    --c-cyan: #00b4d8;
-    --c-text-white: #ffffff;
-}
+            /* Button Materials */
+            --btn-fn-top: #4e535a;
+            --btn-fn-bot: #2c3035;
+            --btn-num-top: #fbfcfd;
+            --btn-num-bot: #c8cbd0;
+            --btn-num-ink: #101214;
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    user-select: none;
-    -webkit-user-select: none;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+            -webkit-user-select: none;
+        }
 
-body {
-    background: radial-gradient(circle at center, #2e3440 0%, #1a1c23 100%);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Chakra Petch', sans-serif;
-    padding: 20px;
-}
+        body {
+            background: radial-gradient(circle at 50% 20%, #2f3640 0%, #15181c 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Chakra Petch', sans-serif;
+            padding: 15px;
+        }
 
-/* Outer Casio Body (Tapered Plastic Shell) */
-.calc-chassis {
-    width: 330px;
-    background: linear-gradient(180deg, var(--case-silver-top) 0%, var(--case-silver-mid) 40%, var(--case-silver-bottom) 100%);
-    border-radius: 16px 16px 36px 36px;
-    padding: 18px 14px 24px;
-    box-shadow: 
-        0 20px 45px rgba(0, 0, 0, 0.7),
-        inset 0 2px 3px rgba(255, 255, 255, 0.8),
-        inset 0 -4px 6px rgba(0, 0, 0, 0.4);
-    position: relative;
-    border: 1px solid #787d84;
-}
+        /* Calculator Chassis with true curved contour */
+        .casio-body {
+            width: 350px;
+            background: linear-gradient(180deg, var(--body-silver-1) 0%, var(--body-silver-2) 35%, var(--body-silver-3) 100%);
+            border-radius: 18px 18px 45px 45px;
+            padding: 16px 14px 24px;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.75),
+                0 10px 20px rgba(0, 0, 0, 0.4),
+                inset 0 2px 3px rgba(255, 255, 255, 0.9),
+                inset 0 -5px 8px rgba(0, 0, 0, 0.5);
+            border: 1px solid #757b82;
+            position: relative;
+        }
 
-/* Header Area */
-.calc-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 8px;
-    padding: 0 4px;
-}
+        /* Top Brand and Solar Section */
+        .top-banner {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            padding: 0 4px;
+        }
 
-.brand-section {
-    display: flex;
-    flex-direction: column;
-}
+        .brand-block {
+            display: flex;
+            flex-direction: column;
+        }
 
-.casio-logo {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.15rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: #1a1e24;
-}
+        .brand-casio {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.22rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: #1a1e23;
+            line-height: 1;
+        }
 
-.model-name {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    color: #2b3038;
-}
+        .brand-model {
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: #2b313a;
+            margin-top: 2px;
+        }
 
-.sub-edition {
-    font-size: 0.48rem;
-    font-weight: 700;
-    color: #0b4f8a;
-    letter-spacing: 0.5px;
-}
+        .vpam-tag {
+            font-size: 0.47rem;
+            font-weight: 700;
+            color: #0d548f;
+            letter-spacing: 0.5px;
+        }
 
-.power-section {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
+        .solar-block {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
 
-.two-way-text {
-    font-size: 0.42rem;
-    font-weight: 700;
-    color: #4b515a;
-    margin-bottom: 3px;
-}
+        .two-way-power {
+            font-size: 0.42rem;
+            font-weight: 700;
+            color: #434850;
+            margin-bottom: 2px;
+        }
 
-.solar-panel {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2px;
-    background: #111;
-    padding: 2px 3px;
-    border-radius: 3px;
-    border: 1px solid #555;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.8);
-}
+        .solar-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+            background: #0f1113;
+            padding: 2px 3px;
+            border-radius: 3px;
+            border: 1px solid #4a4f55;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.9);
+        }
 
-.solar-panel span {
-    width: 10px;
-    height: 18px;
-    background: linear-gradient(180deg, #3d241d 0%, #1f110c 100%);
-    border-radius: 1px;
-}
+        .solar-grid span {
+            width: 10px;
+            height: 18px;
+            background: linear-gradient(180deg, #3d2218 0%, #1a0e0a 100%);
+            border-radius: 1px;
+        }
 
-/* Display Bezel & LCD */
-.display-bezel {
-    background: var(--bezel-dark);
-    padding: 10px 10px 8px;
-    border-radius: 8px 8px 12px 12px;
-    box-shadow: 
-        inset 0 2px 5px rgba(0,0,0,0.8),
-        0 2px 3px rgba(255,255,255,0.4);
-    margin-bottom: 12px;
-}
+        /* Bezel & 2-Line Screen */
+        .screen-bezel {
+            background: var(--bezel-dark);
+            padding: 8px 10px 6px;
+            border-radius: 8px 8px 12px 12px;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.9), 0 2px 3px rgba(255,255,255,0.4);
+            margin-bottom: 12px;
+        }
 
-.lcd-screen {
-    background: var(--lcd-bg);
-    border-radius: 4px;
-    padding: 4px 6px 4px;
-    box-shadow: inset 0 2px 6px var(--lcd-shadow);
-    color: var(--lcd-pixel);
-    font-family: 'Share Tech Mono', monospace;
-    position: relative;
-    border: 1px solid #758673;
-}
+        .lcd {
+            background: var(--lcd-bg);
+            border-radius: 4px;
+            padding: 4px 8px 6px;
+            box-shadow: inset 0 2px 6px var(--lcd-shadow);
+            color: var(--lcd-ink);
+            font-family: 'Share Tech Mono', monospace;
+            border: 1px solid #6f826d;
+            height: 82px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
-.lcd-status-row {
-    display: flex;
-    gap: 4px;
-    font-size: 0.55rem;
-    font-weight: 700;
-    height: 12px;
-    align-items: center;
-    border-bottom: 1px dotted rgba(24, 36, 27, 0.25);
-}
+        /* Status Flags (S, A, M, STO, D, R, etc.) */
+        .lcd-flags {
+            display: flex;
+            justify-content: flex-start;
+            gap: 6px;
+            font-size: 0.58rem;
+            font-weight: 700;
+            height: 12px;
+            border-bottom: 1px dotted rgba(22, 34, 23, 0.25);
+        }
 
-.lcd-status-row .ind {
-    opacity: 0.15;
-    transition: opacity 0.1s;
-}
+        .flag {
+            opacity: 0.12;
+            transition: opacity 0.05s ease;
+        }
 
-.lcd-status-row .ind.active {
-    opacity: 1;
-}
+        .flag.on {
+            opacity: 1;
+        }
 
-.lcd-expression-line {
-    min-height: 24px;
-    font-size: 1.05rem;
-    letter-spacing: 0.5px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: clip;
-    display: flex;
-    align-items: center;
-}
+        .lcd-expr-row {
+            font-size: 1.05rem;
+            min-height: 24px;
+            overflow: hidden;
+            white-space: nowrap;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+        }
 
-.lcd-result-line {
-    min-height: 28px;
-    font-size: 1.45rem;
-    text-align: right;
-    font-weight: 700;
-    overflow-x: auto;
-    white-space: nowrap;
-    line-height: 1.1;
-}
+        .cursor {
+            display: inline-block;
+            background: var(--lcd-ink);
+            color: var(--lcd-bg);
+            animation: blink 0.9s infinite steps(1);
+            font-weight: bold;
+            padding: 0 1px;
+        }
 
-/* Top Control Cluster (SHIFT, ALPHA, REPLAY, MODE, ON) */
-.top-control-cluster {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-    padding: 0 4px;
-}
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
 
-.top-function-btns {
-    display: flex;
-    gap: 6px;
-}
+        .lcd-res-row {
+            font-size: 1.55rem;
+            font-weight: 700;
+            text-align: right;
+            line-height: 1;
+            min-height: 28px;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
 
-.replay-pad {
-    width: 82px;
-    height: 64px;
-    background: linear-gradient(180deg, #c2c7cd 0%, #8c9299 100%);
-    border-radius: 40px;
-    box-shadow: 
-        0 3px 6px rgba(0,0,0,0.4),
-        inset 0 1px 2px rgba(255,255,255,0.7);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    align-items: center;
-    justify-items: center;
-    position: relative;
-}
+        /* Function Pad & REPLAY Controls */
+        .control-row {
+            display: grid;
+            grid-template-columns: 82px 1fr 82px;
+            align-items: center;
+            margin-bottom: 8px;
+            gap: 4px;
+        }
 
-.replay-title {
-    grid-column: 2;
-    grid-row: 2;
-    font-size: 0.42rem;
-    font-weight: 700;
-    color: #3b4046;
-}
+        .top-pills {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
 
-.dpad-btn {
-    background: transparent;
-    border: none;
-    color: #2b3038;
-    font-size: 0.65rem;
-    cursor: pointer;
-    line-height: 1;
-    padding: 2px;
-}
+        .replay-chassis {
+            width: 90px;
+            height: 64px;
+            margin: 0 auto;
+            background: linear-gradient(180deg, #c7ccd2 0%, #878d94 100%);
+            border-radius: 40px;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.4), inset 0 1px 2px rgba(255,255,255,0.8);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            align-items: center;
+            justify-items: center;
+            position: relative;
+        }
 
-.dpad-btn:active {
-    color: #000;
-    transform: scale(0.85);
-}
+        .replay-txt {
+            grid-column: 2;
+            grid-row: 2;
+            font-size: 0.44rem;
+            font-weight: 700;
+            color: #3b4047;
+        }
 
-.dpad-btn.up { grid-column: 2; grid-row: 1; }
-.dpad-btn.down { grid-column: 2; grid-row: 3; }
-.dpad-btn.left { grid-column: 1; grid-row: 2; }
-.dpad-btn.right { grid-column: 3; grid-row: 2; }
+        .arrow-key {
+            background: none;
+            border: none;
+            font-size: 0.65rem;
+            color: #21262d;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-/* Buttons & Labels Base */
-.btn {
-    position: relative;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 
-        0 3px 2px rgba(0,0,0,0.35),
-        inset 0 1px 1px rgba(255,255,255,0.4);
-    border-radius: 4px 4px 6px 6px;
-    transition: transform 0.05s, box-shadow 0.05s, filter 0.05s;
-}
+        .arrow-key:active {
+            transform: scale(0.85);
+            color: #000;
+        }
 
-.btn:active {
-    transform: translateY(2px);
-    box-shadow: 0 1px 1px rgba(0,0,0,0.4);
-    filter: brightness(0.92);
-}
+        .arrow-key.up { grid-column: 2; grid-row: 1; }
+        .arrow-key.dn { grid-column: 2; grid-row: 3; }
+        .arrow-key.lf { grid-column: 1; grid-row: 2; }
+        .arrow-key.rt { grid-column: 3; grid-row: 2; }
 
-.shift-hint {
-    position: absolute;
-    top: -9px;
-    left: 1px;
-    font-size: 0.44rem;
-    font-weight: 700;
-    color: var(--c-yellow);
-    pointer-events: none;
-}
+        /* Unified Key Matrix */
+        .sci-keys {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 12px 6px;
+            margin-bottom: 12px;
+            padding-top: 4px;
+        }
 
-.alpha-hint {
-    position: absolute;
-    top: -9px;
-    right: 1px;
-    font-size: 0.44rem;
-    font-weight: 700;
-    color: var(--c-magenta);
-    pointer-events: none;
-}
+        .num-keys {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px 6px;
+        }
 
-.font-yellow { color: var(--c-yellow) !important; }
-.font-magenta { color: var(--c-magenta) !important; }
+        /* Generic Button Elements */
+        .k {
+            position: relative;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            outline: none;
+            box-shadow: 0 3px 2px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.4);
+            transition: transform 0.04s, filter 0.04s;
+        }
 
-/* Pill Shaped Top Buttons */
-.btn-pill {
-    width: 32px;
-    height: 20px;
-    background: linear-gradient(180deg, var(--btn-pill-top) 0%, var(--btn-pill-bot) 100%);
-    border-radius: 10px;
-}
-.btn-pill .main-txt {
-    font-size: 0.48rem;
-    font-weight: 700;
-    color: #fff;
-}
+        .k:active {
+            transform: translateY(2px);
+            box-shadow: 0 1px 1px rgba(0,0,0,0.4);
+            filter: brightness(0.9);
+        }
 
-/* Scientific Keys Grid */
-.scientific-keypad {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 12px 6px;
-    margin-bottom: 12px;
-    padding-top: 6px;
-}
+        /* Secondary Print Annotations */
+        .s-lbl {
+            position: absolute;
+            top: -10px;
+            left: 2px;
+            font-size: 0.44rem;
+            font-weight: 700;
+            color: var(--c-shift);
+            pointer-events: none;
+            white-space: nowrap;
+        }
 
-.btn-fn {
-    height: 25px;
-    background: linear-gradient(180deg, var(--btn-fn-top) 0%, var(--btn-fn-dark) 100%);
-    color: #fff;
-    border-radius: 3px 3px 5px 5px;
-}
+        .a-lbl {
+            position: absolute;
+            top: -10px;
+            right: 2px;
+            font-size: 0.44rem;
+            font-weight: 700;
+            color: var(--c-alpha);
+            pointer-events: none;
+            white-space: nowrap;
+        }
 
-.btn-fn .main-txt {
-    font-size: 0.65rem;
-    font-weight: 600;
-}
+        .m-lbl {
+            position: absolute;
+            bottom: -9px;
+            font-size: 0.42rem;
+            font-weight: 700;
+            color: var(--c-mode);
+            pointer-events: none;
+            white-space: nowrap;
+        }
 
-/* Numeric & Lower Keypad Grid */
-.numeric-keypad {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px 6px;
-}
+        /* Button Variations */
+        .pill {
+            height: 20px;
+            background: linear-gradient(180deg, #9ca2a8 0%, #767c82 100%);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 0.55rem;
+            font-weight: 700;
+        }
 
-.btn-num {
-    height: 33px;
-    background: linear-gradient(180deg, var(--btn-num-light) 0%, var(--btn-num-bottom) 100%);
-    color: #121416;
-    border-radius: 4px;
-}
+        .f-key {
+            height: 25px;
+            background: linear-gradient(180deg, var(--btn-fn-top) 0%, var(--btn-fn-bot) 100%);
+            border-radius: 3px 3px 6px 6px;
+            color: #ffffff;
+            font-size: 0.68rem;
+            font-weight: 600;
+        }
 
-.btn-num .main-txt {
-    font-size: 0.92rem;
-    font-weight: 700;
-}
+        .n-key {
+            height: 34px;
+            background: linear-gradient(180deg, var(--btn-num-top) 0%, var(--btn-num-bot) 100%);
+            border-radius: 4px;
+            color: var(--btn-num-ink);
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
 
-.btn-action-del, .btn-action-ac {
-    height: 33px;
-    background: linear-gradient(180deg, var(--btn-del-ac) 0%, var(--btn-del-ac-dark) 100%);
-    color: #ffffff;
-}
+        .del-ac {
+            background: linear-gradient(180deg, var(--c-del-ac) 0%, var(--c-del-dark) 100%);
+            color: #ffffff;
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
 
-.btn-action-del .main-txt, .btn-action-ac .main-txt {
-    font-size: 0.76rem;
-    font-weight: 700;
-}
+        .k-txt {
+            pointer-events: none;
+        }
 
-/* Active modifier button highlight */
-.btn.active-mod {
-    box-shadow: 0 0 6px 2px var(--c-yellow);
-}
-.btn.active-alpha-mod {
-    box-shadow: 0 0 6px 2px var(--c-magenta);
-}
+        .gold { color: var(--c-shift) !important; }
+        .ruby { color: var(--c-alpha) !important; }
+
+        /* Menu Overlays */
+        .menu-overlay {
+            position: absolute;
+            inset: 0;
+            background: var(--lcd-bg);
+            color: var(--lcd-ink);
+            display: none;
+            flex-direction: column;
+            padding: 6px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            z-index: 10;
+        }
+
+        .menu-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 2px 0;
+        }
