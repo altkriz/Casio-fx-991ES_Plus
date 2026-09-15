@@ -13,14 +13,21 @@ An authentic, zero-dependency, pixel-accurate web recreation of the world's most
 [![Zero Dependencies](https://img.shields.io/badge/Dependencies-NONE-success?style=for-the-badge)](#)
 
 <br/>
-
-| CASIO fx-991ES PLUS | | [ S ][ A ][ M ][ D ][ Math ▲▼ ] | |
-_______________________________________ | | | ∫(X², 0, 1) | | <-- Natural
-Expression Line | | 1⌟3 | | <-- Exact Form Result Line |
-|_____________________________________| | | [ REPLAY ] | | [SHIFT] [ALPHA] ▲
-[MODE] [ ON ] | | ◀ ■ ▶ | | [CALC] [∫dx] ▼ [x⁻¹] [log■■] | | [■/□] [√■] [x²]
-[x■] [log] | |_________________________________________|
-
+<pre align="center">
+ _________________________________________
+(  CASIO                    fx-991ES PLUS )
+|  [ S ][ A ][ M ][ D ][ Math ▲▼ ]        |
+| ======================================= |
+|   ∫(X², 0, 1)                           |
+|                                     1⌟3 |
+| ======================================= |
+|                 [ REPLAY ]              |
+|   [SHIFT] [ALPHA]   ▲   [MODE] [ ON ]   |
+|                   ◀ ■ ▶                 |
+|   [CALC]  [∫dx]     ▼   [x⁻¹]  [log■■]  |
+|   [■/□]   [√■]    [x²]  [x■]   [log]    |
+ \_______________________________________/
+</pre>
 
 </div>
 
@@ -107,39 +114,34 @@ The emulator features native physical keyboard bindings for rapid data entry:
 | `Arrow Left` / `Right` | Move Cursor Left / Right on LCD         |
 | `Arrow Up` / `Down`    | Browse Previous Expression History      |
 
-🛠️ Architecture & Tech Stack
+## 🛠️ Architecture & Tech Stack
 
-┌────────────────────────────────────────────────────────┐
-│               Single Standalone Document               │
-│                                                        │
-│  ┌─────────────────┐ ┌──────────────────────────────┐  │
-│  │   UI & Bezels   │ │      Display Management      │  │
-│  │  - CSS Gradients│ │  - Status Annunciators       │  │
-│  │  - Flex & Grids │ │  - Dot-Matrix Emulation      │  │
-│  └─────────────────┘ └──────────────────────────────┘  │
-│  ┌──────────────────────────────────────────────────┐  │
-│  │             Math Parsing Engine (AST)            │  │
-│  │  - Lexer & Parenthesis Balancer                  │  │
-│  │  - Implicit Multiplier Synthesizer               │  │
-│  │  - Continued-Fraction Decomposition              │  │
-│  │  - Numerical Simpson & Finite Difference Solvers │  │
-│  └──────────────────────────────────────────────────┘  │
-│  ┌─────────────────┐ ┌──────────────────────────────┐  │
-│  │  Web Audio API  │ │   Variable & Register Stack  │  │
-│  │  - Procedural   │ │  - A, B, C, D, E, F, X, Y, M │  │
-│  │    Relay Clicks │ │  - History Stack Navigation  │  │
-│  └─────────────────┘ └──────────────────────────────┘  │
-└────────────────────────────────────────────────────────┘
+```mermaid
+flowchart TD
+    subgraph UI ["🖥️ UI & Physical Layer"]
+        A[Chassis & Bezels<br/>CSS Gradients & Shadows]
+        B[Display Management<br/>Dual-Line LCD & Status Flags]
+        C[Web Audio API<br/>Procedural Key Clicks]
+    end
 
-  - Markup & Layout: Semantic HTML5 with responsive CSS Grid and Flexbox
-    layouts.
-  - Styling: Hardware-accurate metallic gradients, authentic button beveling,
-    active button depressions, and custom status flags.
-  - Audio Synthesis: Integrated oscillator nodes leveraging AudioContext to
-    synthesize tactile clicks without downloading external .mp3 or .wav files.
-  - Math Precision: Native high-precision floating point calculation pipeline
-    with tolerance guards to prevent rounding drift.
+    subgraph Core ["⚙️ Core Math Engine"]
+        D[Parser & Lexer<br/>Implicit Multiplier & Tokenizer]
+        E[Solvers<br/>Simpson Rule ∫dx & Finite Diff d/dx]
+        F[Continued Fractions<br/>Exact S⇔D Reduction]
+    end
 
+    subgraph Memory ["💾 Memory & History"]
+        G[Registers<br/>A, B, C, D, E, F, X, Y, M]
+        H[Calculation History<br/>Replay Stack Navigation]
+    end
+
+    UI --> Core
+    Core <--> Memory
+```
+
+- **Markup & Styling**: Pure HTML5 with responsive CSS Grid and Flexbox layouts.
+- **Audio Engine**: Synthesizes authentic tactile clicks using Web Audio oscillator nodes—no external audio files required.
+- **Math Precision**: Native high-precision floating point calculation pipeline with tolerance guards to prevent rounding drift.
 📄 License
 
 This project is open-source and available under the terms of the MIT License.
