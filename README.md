@@ -74,7 +74,7 @@ No installation, web servers, or package managers required.
 
 1. Clone or download this repository:
    ```bash
-   git clone https://github.com/your-repo-path/casio-fx-991es-plus.git
+   git clone https://github.com/altkriz/casio-fx-991es-plus.git
 
 2.  Open the file in any modern web browser:
     # Linux / macOS
